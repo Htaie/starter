@@ -137,7 +137,6 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     labelWelcome.textContent = `Welcome back, ${
@@ -216,8 +215,6 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const eurToUsd = 0.97;
 
 const movementsUSD = movements.map(mov => Math.floor(mov * eurToUsd));
-console.log(movements);
-console.log(movementsUSD);
 
 const movementsUSDfor = [];
 for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
@@ -228,8 +225,6 @@ const movementsDescription = movements.map(
       mov
     )}`
 );
-
-console.log(movementsDescription);
 
 const deposits = movements.filter(function (mov, i, arr) {
   return mov > 0;
@@ -253,7 +248,6 @@ const totalDepositUsd = movements
     return mov * eurToUsd;
   })
   .reduce((acc, mov) => acc + mov, 0);
-console.log(totalDepositUsd);
 
 const firstWithdrawal = movements.find(mov => mov < 0);
 
