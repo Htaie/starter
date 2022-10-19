@@ -248,7 +248,3 @@ const totalDepositUsd = movements
     return mov * eurToUsd;
   })
   .reduce((acc, mov) => acc + mov, 0);
-
-const firstWithdrawal = movements.find(mov => mov < 0);
-
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
